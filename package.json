@@ -1,0 +1,44 @@
+{
+  "name": "placeholder",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "description",
+  "author": "LaiBaoYuan <1727283040@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/LaiBaoYuan/placeholder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaiBaoYuan/placeholder.git"
+  },
+  "bugs": "https://github.com/LaiBaoYuan/placeholder/issues",
+  "scripts": {
+    "dev": "vite --host --open --port 1024",
+    "build": "vue-tsc && vite build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.4.1",
+    "axios": "^1.5.0",
+    "dayjs": "^1.11.9",
+    "pinia": "^2.1.6",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.6.2",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.0.2",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.4.5",
+    "vite-plugin-pages": "^0.31.0",
+    "vitest": "^0.34.4",
+    "vue-tsc": "^1.8.5"
+  }
+}

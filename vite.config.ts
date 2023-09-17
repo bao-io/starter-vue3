@@ -1,0 +1,40 @@
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import Components from "unplugin-vue-components/vite";
+import AutoImport from "unplugin-auto-import/vite";
+import Pages from "vite-plugin-pages";
+
+import { fileURLToPath } from "url";
+import { resolve } from "path";
+
+const root = fileURLToPath(import.meta.url);
+const r = (p: string) => resolve(root, "..", p);
+
+export default defineConfig(({ command }) => ({
+  define: {
+    __DEV__: command === "serve",
+  },
+  plugins: [
+    vue(),
+    Pages(),
+    AutoImport({
+      imports: ["vue", "vue-router", "@vueuse/core", "pinia"],
+      dirs: [
+        r("src/stores"),
+        r("src/utils"),
+        r("src/apis"),
+        r("src/composables"),
+      ],
+      dts: "src/types/auto-import.d.ts",
+    }),
+    Components({
+      dts: "src/types/components.d.ts",
+    }),
+  ],
+  resolve: {
+    alias: { "@": r("src") },
+  },
+  test: {
+    include: ["test/**/*.spec.ts"],
+  },
+}));
