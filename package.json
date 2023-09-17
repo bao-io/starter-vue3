@@ -1,16 +1,16 @@
 {
-  "name": "placeholder",
+  "name": "starter-vue3",
   "version": "0.0.0",
   "type": "module",
-  "description": "description",
+  "description": "_description_",
   "author": "LaiBaoYuan <1727283040@qq.com>",
   "license": "MIT",
-  "homepage": "https://github.com/LaiBaoYuan/placeholder#readme",
+  "homepage": "https://github.com/LaiBaoYuan/starter-vue3#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LaiBaoYuan/placeholder.git"
+    "url": "git+https://github.com/LaiBaoYuan/starter-vue3.git"
   },
-  "bugs": "https://github.com/LaiBaoYuan/placeholder/issues",
+  "bugs": "https://github.com/LaiBaoYuan/starter-vue3/issues",
   "scripts": {
     "dev": "vite --host --open --port 1024",
     "build": "vue-tsc && vite build",
