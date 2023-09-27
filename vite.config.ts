@@ -3,6 +3,7 @@ import vue from "@vitejs/plugin-vue";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Pages from "vite-plugin-pages";
+import UnoCSS from "unocss/vite";
 
 import { fileURLToPath } from "url";
 import { resolve } from "path";
@@ -15,6 +16,7 @@ export default defineConfig(({ command }) => ({
     __DEV__: command === "serve",
   },
   plugins: [
+    UnoCSS(),
     vue(),
     Pages(),
     AutoImport({
@@ -25,11 +27,8 @@ export default defineConfig(({ command }) => ({
         r("src/apis"),
         r("src/composables"),
       ],
-      dts: "src/types/auto-import.d.ts",
     }),
-    Components({
-      dts: "src/types/components.d.ts",
-    }),
+    Components(),
   ],
   resolve: {
     alias: { "@": r("src") },
