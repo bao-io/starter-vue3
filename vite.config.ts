@@ -17,7 +17,11 @@ export default defineConfig(({ command }) => ({
   },
   plugins: [
     UnoCSS(),
-    vue(),
+    vue({
+      script: {
+        defineModel: true,
+      },
+    }),
     Pages(),
     AutoImport({
       imports: ["vue", "vue-router", "@vueuse/core", "pinia"],
