@@ -12,7 +12,7 @@
   },
   "bugs": "https://github.com/LaiBaoYuan/starter-vue3/issues",
   "scripts": {
-    "dev": "vite --host --open --port 1024",
+    "dev": "vite --host --open",
     "build": "vue-tsc && vite build",
     "test": "vitest",
     "coverage": "vitest run --coverage"
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/node": "^20.6.2",
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vue-macros/reactivity-transform": "^0.3.23",
     "typescript": "^5.0.2",
     "unocss": "^0.56.4",
     "unplugin-auto-import": "^0.16.6",

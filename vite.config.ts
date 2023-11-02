@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
+import ReactivityTransform from "@vue-macros/reactivity-transform/vite";
 import Pages from "vite-plugin-pages";
 import UnoCSS from "unocss/vite";
 
@@ -17,6 +18,7 @@ export default defineConfig(({ command }) => ({
   },
   plugins: [
     UnoCSS(),
+    ReactivityTransform(),
     vue({
       script: {
         defineModel: true,
@@ -39,5 +41,13 @@ export default defineConfig(({ command }) => ({
   },
   test: {
     include: ["test/**/*.spec.ts"],
+  },
+  server: {
+    proxy: {
+      "/auth": {
+        target: "https://ai.fakeopen.com",
+        changeOrigin: true,
+      },
+    },
   },
 }));
