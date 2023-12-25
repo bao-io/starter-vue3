@@ -1,24 +1,18 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import Components from "unplugin-vue-components/vite";
-import AutoImport from "unplugin-auto-import/vite";
-import ReactivityTransform from "@vue-macros/reactivity-transform/vite";
-import Pages from "vite-plugin-pages";
-import UnoCSS from "unocss/vite";
+import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Pages from 'vite-plugin-pages'
+import UnoCSS from 'unocss/vite'
 
-import { fileURLToPath } from "url";
-import { resolve } from "path";
+const root = fileURLToPath(import.meta.url)
+const r = (p: string) => resolve(root, '..', p)
 
-const root = fileURLToPath(import.meta.url);
-const r = (p: string) => resolve(root, "..", p);
-
-export default defineConfig(({ command }) => ({
-  define: {
-    __DEV__: command === "serve",
-  },
+export default defineConfig({
   plugins: [
     UnoCSS(),
-    ReactivityTransform(),
     vue({
       script: {
         defineModel: true,
@@ -26,28 +20,17 @@ export default defineConfig(({ command }) => ({
     }),
     Pages(),
     AutoImport({
-      imports: ["vue", "vue-router", "@vueuse/core", "pinia"],
+      imports: ['vue', 'vue-router', '@vueuse/core', 'pinia'],
       dirs: [
-        r("src/stores"),
-        r("src/utils"),
-        r("src/apis"),
-        r("src/composables"),
+        r('src/stores'),
       ],
     }),
     Components(),
   ],
   resolve: {
-    alias: { "@": r("src") },
+    alias: { '@': r('src') },
   },
   test: {
-    include: ["test/**/*.spec.ts"],
+    include: ['test/**/*.spec.ts'],
   },
-  server: {
-    proxy: {
-      "/auth": {
-        target: "https://ai.fakeopen.com",
-        changeOrigin: true,
-      },
-    },
-  },
-}));
+})

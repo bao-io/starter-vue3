@@ -1,7 +1,7 @@
 {
   "name": "starter-vue3",
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
   "description": "_description_",
   "author": "LaiBaoYuan <1727283040@qq.com>",
   "license": "MIT",
@@ -12,10 +12,12 @@
   },
   "bugs": "https://github.com/LaiBaoYuan/starter-vue3/issues",
   "scripts": {
-    "dev": "vite --host --open",
-    "build": "vue-tsc && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "check": "vue-tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@unocss/reset": "^0.56.4",
@@ -27,16 +29,24 @@
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.4.6",
     "@types/node": "^20.6.2",
+    "@unocss/eslint-plugin": "^0.58.0",
     "@vitejs/plugin-vue": "^4.2.3",
-    "@vue-macros/reactivity-transform": "^0.3.23",
+    "lint-staged": "^15.2.0",
+    "simple-git-hooks": "^2.9.0",
     "typescript": "^5.0.2",
     "unocss": "^0.56.4",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.5",
-    "vite-plugin-pages": "^0.31.0",
     "vitest": "^0.34.4",
     "vue-tsc": "^1.8.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm check"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
