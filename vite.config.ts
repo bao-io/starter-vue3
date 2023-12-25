@@ -4,7 +4,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Pages from 'vite-plugin-pages'
 import UnoCSS from 'unocss/vite'
 
 const root = fileURLToPath(import.meta.url)
@@ -18,7 +17,6 @@ export default defineConfig({
         defineModel: true,
       },
     }),
-    Pages(),
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core', 'pinia'],
       dirs: [
