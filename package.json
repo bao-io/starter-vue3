@@ -18,7 +18,8 @@
     "test": "vitest",
     "check": "vue-tsc",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "simple-git-hooks"
   },
   "dependencies": {
     "@unocss/reset": "^0.56.4",
