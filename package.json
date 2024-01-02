@@ -22,29 +22,29 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "@unocss/reset": "^0.56.4",
-    "@vueuse/core": "^10.4.1",
-    "axios": "^1.5.0",
-    "dayjs": "^1.11.9",
-    "pinia": "^2.1.6",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "@unocss/reset": "^0.58.3",
+    "@vueuse/core": "^10.7.1",
+    "axios": "^1.6.3",
+    "dayjs": "^1.11.10",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.3",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.4.6",
-    "@types/node": "^20.6.2",
-    "@unocss/eslint-plugin": "^0.58.0",
-    "@vitejs/plugin-vue": "^4.2.3",
+    "@antfu/eslint-config": "^2.6.1",
+    "@types/node": "^20.10.6",
+    "@unocss/eslint-plugin": "^0.58.3",
+    "@vitejs/plugin-vue": "^5.0.2",
     "eslint": "^8.56.0",
     "lint-staged": "^15.2.0",
     "simple-git-hooks": "^2.9.0",
-    "typescript": "^5.0.2",
-    "unocss": "^0.56.4",
-    "unplugin-auto-import": "^0.16.6",
-    "unplugin-vue-components": "^0.25.2",
-    "vite": "^4.4.5",
-    "vitest": "^0.34.4",
-    "vue-tsc": "^1.8.5"
+    "typescript": "^5.3.3",
+    "unocss": "^0.58.3",
+    "unplugin-auto-import": "^0.17.3",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.0.10",
+    "vitest": "^1.1.1",
+    "vue-tsc": "^1.8.27"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged && pnpm check"
